@@ -3,5 +3,9 @@
   <%= f.text_field :title %>
   <%= f.label :body, "Body" %>
   <%= f.text_area :body %>
-  <%= f.submit "Create Book" %>
+  <% if current_page?(books_path) %>
+    <%= f.submit "Create Book" %>
+  <% else %>
+    <%= f.submit "Update Book" %>
+  <% end %>
 <% end %>
